@@ -1,0 +1,18 @@
+{
+  "name": "doppler-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "express-restify-mongoose": "^1.0.1",
+    "method-override": "^2.3.3",
+    "mongoose": "^4.0.3"
+  }
+}
