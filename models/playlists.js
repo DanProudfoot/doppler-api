@@ -1,17 +1,10 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
-var songSchema = new Schema({
-    songTitle: String,
-    songArtist: [String],
-    albumArtist: [String],
-    album: String,
-    year: String,
-    track: {no:Number, of:Number},
-    genre: Array,
-    duration: Number,
-    path: String,
-    artPath: String
+var playlistSchema = new Schema({
+    owner: id,
+    name: String,
+    contents: Array
 });
 
-module.exports = mongoose.model('Song', songSchema, 'Songs');
+module.exports = mongoose.model('Playlist', playlistSchema, 'Playlists');
