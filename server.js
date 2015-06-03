@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost/Doppler');
  
 var albumModel = require('./models/album.js');
 var songModel = require('./models/songs.js');
- 
+var topModel = require('./models/top.js');
 
 var app = express();
 
@@ -27,19 +27,11 @@ app.use('/music/', serveStatic('/home/music/'));
 
 var router = express.Router();
 
-
-	
+restify.serve(router, songModel);
 restify.serve(router, albumModel);
-restify.serve(router, songModel, {
-	middleware:modify
-});
+restify.serve(router, topModel);
 
 app.use(router);
-
-function modify(req, res, next){
-	console.log(res.body);
-	next();
-}
 
 var port = 3610;
  
